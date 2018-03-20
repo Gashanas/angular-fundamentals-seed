@@ -29,13 +29,16 @@ export class ExampleFormComponent implements OnInit {
       'firstName': ['', [Validators.required, Validators.minLength(3)]],
       'lastName': ['', [Validators.required, Validators.minLength(3)]],
       'email': ['', Validators.required]
-    })
+    });
+    // this.exampleForm.get('firstName').valueChanges.subscribe(val => {
+    //   console.log(val);
+    // })
   }
 
   submitForm() {
     console.log(this.exampleForm.value);
     console.log(this.exampleForm.get('firstName').value);
-    console.log(this.exampleForm.value);
+    console.log(this.exampleForm.get('firstName'));
     this.formModel = new User(this.exampleForm.value);
     console.log(this.formModel);
 
