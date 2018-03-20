@@ -1,0 +1,21 @@
+<p>
+    example-form works!
+</p>
+
+<form [formGroup]="exampleForm">
+    <div>
+        <input type="text" name="firstName" formControlName="firstName" maxlength="30" placeholder="First Name">
+        <span *ngIf="exampleForm.get('firstName').hasError('required') && exampleForm.get('firstName').touched" class="error">Please fill in this field</span>
+        <span *ngIf="exampleForm.get('firstName').hasError('minlength') && exampleForm.get('firstName').touched" class="error">Name is too short</span>
+    </div>
+    <div>
+        <input type="text" name="lastName" formControlName="lastName" maxlength="40" placeholder="Last Name">
+        <span *ngIf="exampleForm.get('lastName').hasError('required') && exampleForm.get('lastName').touched" class="error">Please fill in this field</span>
+        <span *ngIf="exampleForm.get('lastName').hasError('minlength') && exampleForm.get('lastName').touched" class="error">Name is too short</span>
+    </div>
+    <div>
+        <input type="text" name="email" formControlName="email" maxlength="30" placeholder="Email">
+        <span *ngIf="exampleForm.get('email').hasError('required') && exampleForm.get('email').touched" class="error">Please fill in this field</span>
+    </div>
+    <button [disabled]="exampleForm.invalid" style="margin-left: 24px" (click)="submitForm()">Submit</button>
+</form>

@@ -14,6 +14,10 @@ html, body {
   color: #545e6f;
 }
 
+div {
+  margin: 24px;
+}
+
 img {
   vertical-align: bottom;
 }
