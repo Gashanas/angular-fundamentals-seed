@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { User } from '../models/form.model';
+import { Service } from '../service';
 
 @Component({
   selector: 'app-example-form',
@@ -13,8 +14,11 @@ export class ExampleFormComponent implements OnInit {
   formModel: User;
 
   constructor(
-      private fb: FormBuilder
-  ) {}
+      private fb: FormBuilder,
+      private service: Service
+  ) {
+    this.service.ping();
+  }
 
   ngOnInit() {
     this.buildForm();

@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { ExampleFormComponent } from './example-form/example-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { Service } from './service';
 
 @NgModule({
     imports: [
@@ -19,6 +20,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     bootstrap: [
         AppComponent,
         ExampleFormComponent
+    ],
+    providers: [
+        Service
     ]
 })
 export class AppModule {}
